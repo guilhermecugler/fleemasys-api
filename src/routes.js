@@ -8,9 +8,9 @@ routes.use(cors({}));
 
 // Instanciando conexão com o mysql
 var connection = mySQL.createConnection({
-  host: "localhost",
+  host: "controlefrota.cgv4ccfvowdy.sa-east-1.rds.amazonaws.com",
   user: "root",
-  password: "1022",
+  password: "fleemasys",
   database: "controlefrota"
 });
 
