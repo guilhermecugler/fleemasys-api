@@ -300,7 +300,7 @@ routes.get("/motoristas/:Id", function(req, res) {
   );
 });
 
-routes.put("motoristas/:Id", function(req, res) {
+routes.put("/motoristas/:Id", function(req, res) {
   connection.query(
     "update tbMotorista set ? where motoristaId = ?",
     [req.body, req.params.Id],
