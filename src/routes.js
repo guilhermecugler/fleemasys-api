@@ -14,6 +14,13 @@ var connection = mySQL.createConnection({
   database: "controlefrota"
 });
 
+// var connection = mySQL.createConnection({
+//   host: "controlefrota.cgv4ccfvowdy.sa-east-1.rds.amazonaws.com",
+//   user: "root",
+//   password: "fleemasys",
+//   database: "controlefrota"
+// });
+
 connection.connect(function(err) {
   if (err) throw err;
   console.log("Connected to MySQL Server!");
@@ -135,7 +142,7 @@ routes.get("/clientes/:Id", function(req, res) {
   );
 });
 
-routes.put("clientes/:Id", function(req, res) {
+routes.put("/clientes/:Id", function(req, res) {
   connection.query(
     "update tbCliente set ? where clienteId = ?",
     [req.body, req.params.Id],
