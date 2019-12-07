@@ -361,7 +361,7 @@ routes.get("/tecnico/:Id", function(req, res) {
   );
 });
 
-routes.put("tecnico/:Id", function(req, res) {
+routes.put("/tecnico/:Id", function(req, res) {
   connection.query(
     "update tbTecnico set ? where tecnicoId = ?",
     [req.body, req.params.Id],
@@ -415,7 +415,7 @@ routes.get("/abastecimento/:Id", function(req, res) {
   );
 });
 
-routes.put("abastecimento/:Id", function(req, res) {
+routes.put("/abastecimento/:Id", function(req, res) {
   connection.query(
     "update tbAbastecimento set ? where abastecimentoId = ?",
     [req.body, req.params.Id],
@@ -469,7 +469,7 @@ routes.get("/aluguel/:Id", function(req, res) {
   );
 });
 
-routes.put("aluguel/:Id", function(req, res) {
+routes.put("/aluguel/:Id", function(req, res) {
   connection.query(
     "update tbAluguelVeiculo set ? where aluguelVeiculoId = ?",
     [req.body, req.params.Id],
@@ -523,7 +523,7 @@ routes.get("/deslocamento/:Id", function(req, res) {
   );
 });
 
-routes.put("/deslocamento/:Id", function(req, res) {
+routes.put("/qdeslocamento/:Id", function(req, res) {
   connection.query(
     "update tbDeslocamento set ? where deslocamentoId = ?",
     [req.body, req.params.Id],
@@ -652,7 +652,7 @@ routes.get("/embarquedesembarque/:Id", function(req, res) {
   );
 });
 
-routes.put("embarquedesembarque/:Id", function(req, res) {
+routes.put("/embarquedesembarque/:Id", function(req, res) {
   connection.query(
     "update tbEmbarqueDesembarque set ? where edId = ?",
     [req.body, req.params.Id],
@@ -706,7 +706,7 @@ routes.get("/empresa/:Id", function(req, res) {
   );
 });
 
-routes.put("empresa/:Id", function(req, res) {
+routes.put("/empresa/:Id", function(req, res) {
   connection.query(
     "update tbEmpresa set ? where empresaId = ?",
     [req.body, req.params.Id],
@@ -760,7 +760,7 @@ routes.get("/financas/:Id", function(req, res) {
   );
 });
 
-routes.put("financas/:Id", function(req, res) {
+routes.put("/financas/:Id", function(req, res) {
   connection.query(
     "update tbfinancas set ? where financaId = ?",
     [req.body, req.params.Id],
@@ -814,7 +814,7 @@ routes.get("/manutencao/:Id", function(req, res) {
   );
 });
 
-routes.put("manutencao/:Id", function(req, res) {
+routes.put("/manutencao/:Id", function(req, res) {
   connection.query(
     "update tbManutencao set ? where manutencaoId = ?",
     [req.body, req.params.Id],
@@ -868,7 +868,7 @@ routes.get("/multas/:Id", function(req, res) {
   );
 });
 
-routes.put("multas/:Id", function(req, res) {
+routes.put("/multas/:Id", function(req, res) {
   connection.query(
     "update tbMulta set ? where multaId = ?",
     [req.body, req.params.Id],
