@@ -460,7 +460,7 @@ routes.get("/aluguel", function(req, res) {
 
 routes.get("/aluguel/:Id", function(req, res) {
   connection.query(
-    "select aluguelVeiculoId, clienteId, aluguelValor, veiculoId, empresaId, aluguelVeiculoValor, aluguelVeiculoObs, financaId, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo where aluguelVeiculoId = ?",
+    "select aluguelVeiculoId, clienteId, veiculoId, empresaId, aluguelVeiculoValor, aluguelVeiculoObs, financaId, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo where aluguelVeiculoId = ?",
     [req.params.Id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
