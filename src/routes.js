@@ -253,7 +253,7 @@ routes.get("/veiculos/:Id", function(req, res) {
 
 routes.put("/veiculos/:Id", function(req, res) {
   connection.query(
-    "update tbveiculo set ? where veiculoId = ?",
+    "update tbVeiculo set ? where veiculoId = ?",
     [req.body, req.params.Id],
     function(err, rows, fields) {
       if (!err)
@@ -265,7 +265,7 @@ routes.put("/veiculos/:Id", function(req, res) {
 
 routes.delete("/veiculos/:Id", function(req, res) {
   connection.query(
-    "delete from tbveiculo where veiculoId = ?",
+    "delete from tbVeiculo where veiculoId = ?",
     [req.params.Id],
     function(err, rows, fields) {
       if (!err)
@@ -729,7 +729,7 @@ routes.delete("/empresa/:id", function(req, res) {
 });
 
 routes.post("/financas", function(req, res) {
-  connection.query("insert tbfinancas set ?", req.body, function(
+  connection.query("insert tbFinancas set ?", req.body, function(
     err,
     rows,
     fields
@@ -741,7 +741,7 @@ routes.post("/financas", function(req, res) {
 
 routes.get("/financas", function(req, res) {
   connection.query(
-    "select financaId, financaTitular, financaValor, financaReferencia, TipoFinanca from tbfinancas",
+    "select financaId, financaTitular, financaValor, financaReferencia, TipoFinanca from tbFinancas",
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
       else res.status(400).json(err);
@@ -751,7 +751,7 @@ routes.get("/financas", function(req, res) {
 
 routes.get("/financas/:Id", function(req, res) {
   connection.query(
-    "select financaId, financaTitular, financaValor, financaReferencia, TipoFinanca from tbfinancas where financaId = ?",
+    "select financaId, financaTitular, financaValor, financaReferencia, TipoFinanca from tbFinancas where financaId = ?",
     [req.params.Id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
@@ -762,7 +762,7 @@ routes.get("/financas/:Id", function(req, res) {
 
 routes.put("/financas/:Id", function(req, res) {
   connection.query(
-    "update tbfinancas set ? where financaId = ?",
+    "update tbFinancas set ? where financaId = ?",
     [req.body, req.params.Id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
@@ -773,7 +773,7 @@ routes.put("/financas/:Id", function(req, res) {
 
 routes.delete("/financas/:id", function(req, res) {
   connection.query(
-    "delete from tbfinancas where financaId = ?",
+    "delete from tbFinancas where financaId = ?",
     [req.params.id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
