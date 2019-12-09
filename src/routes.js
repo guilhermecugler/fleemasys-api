@@ -633,7 +633,7 @@ routes.post("/embarquedesembarque", function(req, res) {
 
 routes.get("/embarquedesembarque", function(req, res) {
   connection.query(
-    "select edId, motoristaId, veiculoId, edInspecao, edObs, ebDataEntrada, edDataSaida, from tbEmbarqueDesembarque",
+    "select edId, motoristaNome, veiculoPlaca, edInspecao, edObs, ebDataEntrada, edDataSaida, from tbEmbarqueDesembarque",
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
       else res.status(400).json(err);
@@ -643,7 +643,7 @@ routes.get("/embarquedesembarque", function(req, res) {
 
 routes.get("/embarquedesembarque/:Id", function(req, res) {
   connection.query(
-    "select edId, motoristaId, veiculoId, edInspecao, edObs, ebDataEntrada, edDataSaida, from tbEmbarqueDesembarque where edId = ?",
+    "select edId, motoristaNome, veiculoPlaca, edInspecao, edObs, ebDataEntrada, edDataSaida, from tbEmbarqueDesembarque where edId = ?",
     [req.params.Id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
