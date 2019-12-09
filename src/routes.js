@@ -450,7 +450,7 @@ routes.post("/aluguel", function(req, res) {
 
 routes.get("/aluguel", function(req, res) {
   connection.query(
-    "select aluguelVeiculoId, clienteId, veiculoId, empresaId, aluguelVeiculoValor, aluguelVeiculoObs, financaId, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo",
+    "select aluguelVeiculoId, clienteNMFantasia, veiculoPlaca, aluguelVeiculoValor, aluguelVeiculoObs, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo",
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
       else res.status(400).json(err);
@@ -460,7 +460,7 @@ routes.get("/aluguel", function(req, res) {
 
 routes.get("/aluguel/:Id", function(req, res) {
   connection.query(
-    "select aluguelVeiculoId, clienteId, veiculoId, empresaId, aluguelVeiculoValor, aluguelVeiculoObs, financaId, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo where aluguelVeiculoId = ?",
+    "select aluguelVeiculoId, clienteNMFantasia, veiculoPlaca, aluguelVeiculoValor, aluguelVeiculoObs, aluguelVeiculoData, aluguelVeiculoDataDevolucao from tbAluguelVeiculo where aluguelVeiculoId = ?",
     [req.params.Id],
     function(err, rows, fields) {
       if (!err) res.status(200).json(rows);
